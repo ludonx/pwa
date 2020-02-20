@@ -1,10 +1,12 @@
 package com.service.dailyReport;
 
+
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import com.model.DailyReport;
+
 import com.repositories.DailyReportRepo;
 
 
@@ -34,6 +36,25 @@ public class DailyReportServiceImpl implements  DailyReportService{
 
 	@Override
 	public DailyReport addDailyReport(DailyReport dailyReport) {
+		//List<ErrorReport> error_x = dailyReport.getErrors();
+		//error_x.get(0).getDaily_report_id().setId((long)1);
+		//error_x.get(0).setDescription("new desc");
+		/*
+		if( dailyReport.getErrors().size() > 0) {
+			dailyReport.getErrors().stream().forEach( 
+					errorItem -> {errorItem.setDaily_report_id(dailyReport);});
+		}
+		
+		DailyReport newdailyReport = new DailyReport(dailyReport.getSerial_number());
+
+		List< ErrorReport > errorList = new ArrayList<>();
+
+		for (ErrorReport error : dailyReport.getErrors()) {
+			errorList.add( new ErrorReport(error.getType(),error.getDescription(), newdailyReport ) ) ;
+		}
+
+		newdailyReport.setErrors(errorList);
+		 */
 		return dailyReportRepo.save(dailyReport);
 	}
 

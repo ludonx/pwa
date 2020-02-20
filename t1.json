@@ -1,0 +1,19 @@
+ {
+        "serial_number": 2,
+        "report_date": null,
+        "status": "ok545",
+        "automate_information": {
+            "state": "ok",
+            "temperature": 20,
+            "paymentState": {
+                "coins": "azer",
+                "smart_card": "fgv",
+                "card": "sdg"
+            }
+        },
+        "errors": [
+			{"type": "ax23", "description": "azerty"},
+			{"type": "cx400", "description": "qzerty"}
+		],
+        "income": 2
+    }

@@ -2,11 +2,17 @@ package com.model;
 
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
 
 
 @Entity
@@ -18,8 +24,11 @@ public class ErrorReport {
 	private String type;
 	private String description;
 	
-	@ManyToOne
-	private DailyReport daily_report_id;
+	//@ManyToOne
+	//@JoinColumn(name = "daily_report_id")
+	@ManyToOne(fetch = FetchType.EAGER) 
+	@JoinColumn(name = "daily_report_id", insertable = false, updatable = false)
+	private DailyReport dailyReport_id;
 	
 	public ErrorReport() {
 		super();
@@ -51,11 +60,12 @@ public class ErrorReport {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	@JsonIgnore
 	public DailyReport getDaily_report_id() {
-		return daily_report_id;
+		return dailyReport_id;
 	}
-	public void setDaily_report_id(DailyReport daily_report_id) {
-		this.daily_report_id = daily_report_id;
+	public void setDaily_report_id(DailyReport dailyReport_id) {
+		this.dailyReport_id = dailyReport_id;
 	}
 
 	

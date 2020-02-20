@@ -1,15 +1,18 @@
 package com.model;
 
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
+
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 
 
 
@@ -26,10 +29,12 @@ public class DailyReport {
 	
     private AutomateInformation automate_information ;
     
-    @OneToMany(mappedBy = "daily_report_id", cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
-    private Set<ErrorReport> errors;
-//	 @Transient
-//	private Set<Article> articles;
+    //@OneToMany(mappedBy = "daily_report_id", cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "daily_report_id", nullable = false, updatable = false)
+    private List<ErrorReport> errors;
+
+//	private List<Article> articles;
 	
 	private Long income;
 
@@ -91,19 +96,19 @@ public class DailyReport {
 		this.automate_information = automate_information;
 	}
 
-	public Set<ErrorReport> getErrors() {
+	public List<ErrorReport> getErrors() {
 		return errors;
 	}
 
-	public void setErrors(Set<ErrorReport> errors) {
+	public void setErrors(List<ErrorReport> errors) {
 		this.errors = errors;
 	}
 
-//	public Set<Article> getArticles() {
+//	public List<Article> getArticles() {
 //		return articles;
 //	}
 //
-//	public void setArticles(Set<Article> articles) {
+//	public void setArticles(List<Article> articles) {
 //		this.articles = articles;
 //	}
 

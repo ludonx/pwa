@@ -54,6 +54,7 @@ public class DailyReportController {
 	public List<DailyReport> getDailyReportSerialNumber(@PathVariable Long SerialNumber){
 		return dailyReportService.findDailyReportBySerialNumber(SerialNumber);
 	}
+	
 	@PostMapping(path=DailyReportController.PathAddDailyReport)
 	@ResponseStatus(HttpStatus.CREATED)
 	public DailyReport addDailyReport(@RequestBody DailyReport dailyReport){
