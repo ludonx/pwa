@@ -1,0 +1,71 @@
+--- spring boot do not create table : 
+add this to you main class
+@SpringBootApplication
+@EnableConfigurationProperties
+@EntityScan(basePackages = {"com.project.ppaa.model"})
+
+----------------------------------------------------------------------------------------------------------
+@SpringBootApplication // same as @Configuration @EnableAutoConfiguration @ComponentScan
+
+----------------------------------------------------------------------------------------------------------
+--- spring boot do not create database 'pwa_db': 
+spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/pwa_db?createDatabaseIfNotExist=true
+
+----------------------------------------------------------------------------------------------------------
+---!!!!!----
+required a bean of type that could not be found spring boot
+---
+you need to manualy scan all you package
+
+@ComponentScan(basePackages= {"com.controller","com.service"})
+or
+@SpringBootApplication(scanBasePackages= {"com.vz.spring.items"})
+
+more here : https://www.baeldung.com/spring-nosuchbeandefinitionexception
+and 
+https://alsdias.blogspot.com/2017/07/spring-boot-required-bean-of-type-that.html
+and
+https://github.com/spring-guides/gs-accessing-data-mongodb/issues/20
+
+----------------------------------------------------------------------------------------------------------
+Spring Data Rest : Foreign key is update with null after post call in one to many relationship
+
+https://stackoverflow.com/questions/43806173/spring-data-rest-foreign-key-is-update-with-null-after-post-call-in-one-to-man
+
+----------------------------------------------------------------------------------------------------------
+-------> Spring Expected ':' instead of 't' error when returning List?
+----->  infinite recursion
+--
+You have an infinite recursion going on during serialization since User refers to HolidayDates and HolidayDates refer to User. You can stop it by adding @JsonIgnore to getUser in HolidayDates. 
+--
+
+@OneToMany(cascade = CascadeType.ALL)
+@JoinColumn(name = "daily_report_id", nullable = false, updatable = false)
+private List<ErrorReport> errors;
+
+and
+
+@ManyToOne(fetch = FetchType.EAGER) 
+@JoinColumn(name = "daily_report_id", insertable = false, updatable = false)
+private DailyReport dailyReport_id;
+
+@JsonIgnore
+public DailyReport getDaily_report_id() {
+	return dailyReport_id;
+}
+
+----------------------------------------------------------------------------------------------------------
+Errors executing DDL
+--> re-run spring boot app to solve this issue
+
+
+----------------------------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------
+

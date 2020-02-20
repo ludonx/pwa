@@ -1,0 +1,47 @@
+<daily_report>
+
+	<serial_number>0133053</serial_number>
+	<report_date>17/02/2020-18:35:00</report_date>
+	<status>En service</status>
+
+	<automate_information>
+		<state>ok</state>
+		<temperature>5</temperature>
+
+		<payment_state>
+			<coins>normal</coins>
+			<smart_card>erreur</smart_card>
+			<card>normal</card>
+		</payment_state>
+
+
+	</automate_information>
+
+	<errors>
+		<error>
+			<type>ax23</type>
+			<description>azerty</description>
+		</error>
+	</errors>
+	
+	<articles>
+		<article>
+			<name>Cafe</name>
+			<quantity>20</quantity>
+		</article>
+
+		<article>
+			<name>Chocolat</name>
+			<quantity>10</quantity>
+		</article>
+
+		<article>
+			<name>Eau</name>
+			<quantity>30</quantity>
+		</article>
+
+	</articles>
+
+	<income>300</income>
+
+</daily_report>

@@ -1,0 +1,115 @@
+[
+    {
+        "id": 1,
+        "serial_number": 2,
+        "report_date": null,
+        "status": "ok545",
+        "automate_information": {
+            "state": "ok",
+            "temperature": 20,
+            "paymentState": {
+                "coins": "azer",
+                "smart_card": "fgv",
+                "card": "sdg"
+            }
+        },
+        "errors": [
+            {
+                "id": 1,
+                "type": "ax23",
+                "description": "azerty"
+            },
+            {
+                "id": 2,
+                "type": "cx400",
+                "description": "qzerty"
+            }
+        ],
+        "articles": [],
+        "income": 2
+    },
+    {
+        "id": 2,
+        "serial_number": 202102,
+        "report_date": "2019-11-23T23:00:00.000+0000",
+        "status": "en service",
+        "automate_information": {
+            "state": "ok",
+            "temperature": 20,
+            "paymentState": {
+                "coins": "empty_coins",
+                "smart_card": "empty_smart_card",
+                "card": "empty_card"
+            }
+        },
+        "errors": [
+            {
+                "id": 3,
+                "type": "ax23",
+                "description": "azerty"
+            },
+            {
+                "id": 4,
+                "type": "cx400",
+                "description": "qzerty"
+            }
+        ],
+        "articles": [
+            {
+                "name": "cafe",
+                "quantity": 20
+            },
+            {
+                "name": "chocolat",
+                "quantity": 30
+            },
+            {
+                "name": "oasis",
+                "quantity": 10
+            }
+        ],
+        "income": 300
+    },
+    {
+        "id": 3,
+        "serial_number": 202102,
+        "report_date": "2012-01-02T00:00:00.000+0000",
+        "status": "en service",
+        "automate_information": {
+            "state": "ok",
+            "temperature": 20,
+            "paymentState": {
+                "coins": "empty_coins",
+                "smart_card": "empty_smart_card",
+                "card": "empty_card"
+            }
+        },
+        "errors": [
+            {
+                "id": 5,
+                "type": "ax23",
+                "description": "azerty"
+            },
+            {
+                "id": 6,
+                "type": "cx400",
+                "description": "qzerty"
+            }
+        ],
+        "articles": [
+            {
+                "name": "cafe",
+                "quantity": 20
+            },
+            {
+                "name": "chocolat",
+                "quantity": 30
+            },
+            {
+                "name": "oasis",
+                "quantity": 10
+            }
+        ],
+        "income": 300
+    }
+]

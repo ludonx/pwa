@@ -34,7 +34,9 @@ public class DailyReport {
     @JoinColumn(name = "daily_report_id", nullable = false, updatable = false)
     private List<ErrorReport> errors;
 
-//	private List<Article> articles;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "daily_report_id", nullable = false, updatable = false)
+	private List<Article> articles;
 	
 	private Long income;
 
@@ -104,13 +106,13 @@ public class DailyReport {
 		this.errors = errors;
 	}
 
-//	public List<Article> getArticles() {
-//		return articles;
-//	}
-//
-//	public void setArticles(List<Article> articles) {
-//		this.articles = articles;
-//	}
+	public List<Article> getArticles() {
+		return articles;
+	}
+
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
+	}
 
 	public Long getIncome() {
 		return income;

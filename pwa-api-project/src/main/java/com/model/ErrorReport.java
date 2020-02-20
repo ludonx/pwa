@@ -30,6 +30,14 @@ public class ErrorReport {
 	@JoinColumn(name = "daily_report_id", insertable = false, updatable = false)
 	private DailyReport dailyReport_id;
 	
+	@JsonIgnore
+	public DailyReport getDaily_report_id() {
+		return dailyReport_id;
+	}
+	public void setDaily_report_id(DailyReport dailyReport_id) {
+		this.dailyReport_id = dailyReport_id;
+	}
+	
 	public ErrorReport() {
 		super();
 		this.type = "empty_type";
@@ -60,13 +68,7 @@ public class ErrorReport {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	@JsonIgnore
-	public DailyReport getDaily_report_id() {
-		return dailyReport_id;
-	}
-	public void setDaily_report_id(DailyReport dailyReport_id) {
-		this.dailyReport_id = dailyReport_id;
-	}
+	
 
 	
 	
