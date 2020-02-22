@@ -8,8 +8,14 @@ web project
 
 - EXEMPLE :
 1. local
-    * http://localhost:8080/pwa/services/dailyReport/add
     * http://localhost:8080/pwa/services/dailyReport/all
+    * http://localhost:8080/pwa/services/dailyReport/add
+    * http://localhost:8080/pwa/services/dailyReport/serialNumber/1
+    
+    * http://localhost:8080/pwa/services/automate/add
+    * http://localhost:8080/pwa/services/automate/all
+    * http://localhost:8080/pwa/services/automate/Check/serialNumber/1
+    * http://localhost:8080/pwa/services/automate/serialNumber/1
   
 
 - METHODE
