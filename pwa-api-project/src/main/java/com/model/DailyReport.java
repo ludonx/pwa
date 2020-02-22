@@ -16,6 +16,7 @@ import javax.persistence.Table;
 
 
 
+
 @Entity
 @Table(name = "daily_report")
 public class DailyReport {
@@ -24,6 +25,7 @@ public class DailyReport {
 	private Long id;
 
 	private Long serial_number;
+	
 	private Date report_date;
 	private String status;
 	
@@ -38,14 +40,28 @@ public class DailyReport {
     @JoinColumn(name = "daily_report_id", nullable = false, updatable = false)
 	private List<Article> articles;
 	
+    
 	private Long income;
 
-	
+//	//---------------------------------------------------
+//	@ManyToOne(fetch = FetchType.EAGER) 
+//	@JoinColumn(name = "automate_serial_number", insertable = false, updatable = false)
+//	private Automate automate_serial_number;
+//	
+//	@JsonIgnore
+//	public Automate getAutomate_serial_number() {
+//		return automate_serial_number;
+//	}
+//
+//	public void setAutomate_serial_number(Automate automate_serial_number) {
+//		this.automate_serial_number = automate_serial_number;
+//	}
+//	//----------------------------------------------------
 	
 	public DailyReport() {
 		super();
 	}
-	
+
 	public DailyReport(Long serial_number, Date report_date, String status, Long income) {
 		super();
 		this.serial_number = serial_number;

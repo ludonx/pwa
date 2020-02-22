@@ -55,7 +55,7 @@ public DailyReport getDaily_report_id() {
 }
 
 ----------------------------------------------------------------------------------------------------------
-Errors executing DDL
+Errors executing DDL drop or alter table
 --> re-run spring boot app to solve this issue
 
 
