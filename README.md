@@ -17,13 +17,15 @@ web project
 
     | TABLE | GET                   | Description               | 
     | ----  | ----                  | ----                      |
-    |dailyReport	| /all                  | dailyReport list         |
-    |dailyReport	| /{id}                 |  dailyReport by id       |
-    |dailyReport	| /serialNumber/{id}          | dailyReport by serialNumber |
+    |dailyReport	| /all               | dailyReport list         |
+    |dailyReport	| /{id}              |  dailyReport by id       |
+    |dailyReport	| /serialNumber/{id} | dailyReport by serialNumber |
     |    	| ----                  | ----                      |
 
-    |   	| ----                  | ----                      |
-
+    |automate   	| /all                  | automate list              |
+    |automate	| /serialNumber/{id}    | automate by serialNumber |
+    |automate	| /Check/serialNumber/{id} | check if automate exist |
+    
     * ***POST***
 
     | TABLE | POST                  | Description               | 
@@ -31,7 +33,7 @@ web project
     |dailyReport	| /add                 | add dailyReport `json`  |
     
     |	| ----                  | ----                      |
-    | 	| ----                  | ----                      |
+     |automate	| /add                 | add automate `json`  |
 
 ## EXECUTER Web Service localy with the JAR file
 
