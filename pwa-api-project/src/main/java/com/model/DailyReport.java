@@ -12,11 +12,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAnyElement;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlRootElement;
 
 
 
 
-
+@XmlRootElement(name = "daily_report")
 @Entity
 @Table(name = "daily_report")
 public class DailyReport {
@@ -31,11 +35,15 @@ public class DailyReport {
 	
     private AutomateInformation automate_information ;
     
+    //@XmlElementWrapper(name = "errors")
+    //@XmlElement(name="error")
     //@OneToMany(mappedBy = "daily_report_id", cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "daily_report_id", nullable = false, updatable = false)
     private List<ErrorReport> errors;
 
+    //@XmlElementWrapper(name = "articles")
+    //@XmlElement(name="article")
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "daily_report_id", nullable = false, updatable = false)
 	private List<Article> articles;
@@ -113,7 +121,7 @@ public class DailyReport {
 	public void setAutomate_information(AutomateInformation automate_information) {
 		this.automate_information = automate_information;
 	}
-
+	
 	public List<ErrorReport> getErrors() {
 		return errors;
 	}

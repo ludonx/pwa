@@ -9,12 +9,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 
-
+//@XmlRootElement(name = "error")
 @Entity
 @Table(name = "error_report")
 public class ErrorReport {

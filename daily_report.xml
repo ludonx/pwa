@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <daily_report>
 
 	<serial_number>0133053</serial_number>
-	<report_date>17/02/2020-18:35:00</report_date>
+	<report_date>2019-11-23</report_date>
 	<status>En service</status>
 
 	<automate_information>
@@ -23,21 +24,24 @@
 			<description>azerty</description>
 		</error>
 	</errors>
-	
+
 	<articles>
 		<article>
 			<name>Cafe</name>
 			<quantity>20</quantity>
+			<type>Chaud</type>
 		</article>
 
 		<article>
 			<name>Chocolat</name>
 			<quantity>10</quantity>
+			<type>Chaud</type>
 		</article>
 
 		<article>
 			<name>Eau</name>
 			<quantity>30</quantity>
+			<type>froid</type>
 		</article>
 
 	</articles>

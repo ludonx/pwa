@@ -19,6 +19,7 @@ public class Article {
 	private Long id;
 	private String name;
 	private Long quantity;
+	private String type;
 	
 	@ManyToOne(fetch = FetchType.EAGER) 
 	@JoinColumn(name = "daily_report_id", insertable = false, updatable = false)
@@ -37,10 +38,11 @@ public class Article {
 		this.quantity = (long) 0;
 	}
 	
-	public Article(String name, Long quantity) {
+	public Article(String name, Long quantity, String type) {
 		super();
 		this.name = name;
 		this.quantity = quantity;
+		this.type = type;
 	}
 	public String getName() {
 		return name;
@@ -54,6 +56,14 @@ public class Article {
 	public void setQuantity(Long quantity) {
 		this.quantity = quantity;
 	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	
 	
 	
 }

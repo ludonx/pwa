@@ -7,20 +7,20 @@ public class AutomateInformation {
 	private String state;
 	private Double temperature;
 	
-	private PaymentState  paymentState;
+	private PaymentState  payment_state;
 	
 	public AutomateInformation() {
 		super();
 		this.state = "empty_state";
 		this.temperature = (double) 0;
-		this.paymentState = new PaymentState();
+		this.payment_state = new PaymentState();
 	}
 	
-	public AutomateInformation(String state, Double temperature, PaymentState paymentState) {
+	public AutomateInformation(String state, Double temperature, PaymentState payment_state) {
 		super();
 		this.state = state;
 		this.temperature = temperature;
-		this.paymentState = paymentState;
+		this.payment_state = payment_state;
 	}
 
 	public String getState() {
@@ -36,12 +36,12 @@ public class AutomateInformation {
 		this.temperature = temperature;
 	}
 
-	public PaymentState getPaymentState() {
-		return paymentState;
+	public PaymentState getpayment_state() {
+		return payment_state;
 	}
 
-	public void setPaymentState(PaymentState paymentState) {
-		this.paymentState = paymentState;
+	public void setpayment_state(PaymentState payment_state) {
+		this.payment_state = payment_state;
 	}
 	
 	

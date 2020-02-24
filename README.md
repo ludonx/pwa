@@ -39,7 +39,7 @@ web project
     |	            | ----                  | ----                      |
     |automate	| /add                 | add automate `json`  |
 
-## EXECUTER Web Service localy with the JAR file
+## EXECUTE the Web Service localy with the JAR file
 
 0. Download jar/pwa-api-project-0.0.1-SNAPSHOT.jar
 1. Instal and configure Mysql as followed
