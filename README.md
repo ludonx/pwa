@@ -61,6 +61,7 @@ web project
         - >CREATE DATABASE pwa_db;
 2. Instal JDK
 3. Go on google and typed (execute a jar file on linux (or windows) ) or checkout the [help section ](#Help)
+* java -jar Minecraft.jar (ubuntu)
 
 ## Help
 
