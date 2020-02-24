@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +26,7 @@ public class AutomateController {
 	public static final String PathCheckAutomateBySerialNumber = "/Check/serialNumber/{SerialNumber}";
 
 	public static final String PathAddAutomate = "/add";
+	public static final String PathDeleteAutomate = "/delete/{SerialNumber}";
 	
 	@Autowired
 	private AutomateService automateService;
@@ -59,6 +61,12 @@ public class AutomateController {
 		if(res != null )msg = "Automate added ^.^" ;
 		else msg = "Failed to add Automate !!! :(";
 		return msg; 
+	}
+	
+	@DeleteMapping(path=AutomateController.PathDeleteAutomate)
+	public String deleteAutomateBySerialNumber(@PathVariable Long SerialNumber){
+		automateService.deleteAutomateBySerialNumber(SerialNumber);
+		return "Delete Completed";
 	}
 
 }

@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,7 +31,8 @@ public class DailyReportController {
 	public static final String PathGetDailyReportById = "/{id}";
 
 	public static final String PathAddDailyReport = "/add";
-	//public static final String PathAddDailyReportXml = "/xml/add";
+	public static final String PathDeleteDailyReport = "/delete/{id}";
+	
 	
 	@Autowired
 	private DailyReportService dailyReportService;
@@ -84,28 +86,10 @@ public class DailyReportController {
 		return msg; 
 	}
     
-    /*@PostMapping(
-    		path=DailyReportController.PathAddDailyReportXml,
-    		consumes = MediaType.APPLICATION_XML_VALUE,
-            produces = MediaType.APPLICATION_XML_VALUE
-    )
-	//@PostMapping(path=DailyReportController.PathAddDailyReport)
-	@ResponseStatus(HttpStatus.CREATED)
-	public String addDailyReport_xml(@RequestBody DailyReport dailyReport){
-		String msg; 
-		//AutomateController automateController = new AutomateController() ;
-		
-		Boolean  automate_exist = automateService.existsAutomateBySerialNumber(dailyReport.getSerial_number());
-				// automateController.CheckAutomateBySerialNumber(dailyReport.getSerial_number());
-		
-		if (automate_exist == true) {
-			DailyReport res = dailyReportService.addDailyReport(dailyReport);
-			if(res != null )msg = "DailyReport added ^.^" ;
-			else msg = "Failed to add DailyReport !!! :(";
-		}else {
-			msg = "Failed to add : automate with serial number ["+dailyReport.getSerial_number()+"] does not exist !!!";
-		}
-		
-		return msg; 
-	}*/
+    @DeleteMapping(path=DailyReportController.PathDeleteDailyReport)
+	public String deleteDailyReportSerialNumber(@PathVariable Long id){
+		dailyReportService.deleteDailyReportById(id);
+		return "Deleting completed";
+	}
+
 }

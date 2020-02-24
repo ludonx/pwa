@@ -11,4 +11,5 @@ public interface AutomateService {
 	Automate addAutomate(Automate automate);
 	
 	boolean existsAutomateBySerialNumber(Long SerialNumber);
+	void deleteAutomateBySerialNumber(Long SerialNumber);
 }

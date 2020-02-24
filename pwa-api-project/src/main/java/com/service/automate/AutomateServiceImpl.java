@@ -35,6 +35,12 @@ public class AutomateServiceImpl implements AutomateService{
 	public boolean existsAutomateBySerialNumber(Long SerialNumber) {
 		return automateRepo.existsById(SerialNumber);
 	}
+
+	@Override
+	public void deleteAutomateBySerialNumber(Long SerialNumber) {
+		automateRepo.deleteById(SerialNumber);
+		
+	}
 	
 	
 

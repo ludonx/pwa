@@ -58,5 +58,10 @@ public class DailyReportServiceImpl implements  DailyReportService{
 		return dailyReportRepo.save(dailyReport);
 	}
 
+	@Override
+	public void deleteDailyReportById(Long id) {
+		dailyReportRepo.deleteById(id);
+	}
+
 	
 }
