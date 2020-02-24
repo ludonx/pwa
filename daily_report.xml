@@ -23,6 +23,10 @@
 			<type>ax23</type>
 			<description>azerty</description>
 		</error>
+		<error>
+			<type>ab23</type>
+			<description>erreur ab23</description>
+		</error>
 	</errors>
 
 	<articles>

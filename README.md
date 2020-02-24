@@ -37,7 +37,7 @@ web project
 
     | TABLE | POST                  | Description               | 
     | ----  | ----                  | ----                      |
-    |dailyReport	| /add                 | add dailyReport `json`  |
+    |dailyReport	| /add                 | add dailyReport `json` and `xml`  |
     |	            | ----                  | ----                      |
     |automate	| /add                 | add automate `json`  |
     

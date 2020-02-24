@@ -12,17 +12,20 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlAnyElement;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlAccessType;
 
 
 
 
-@XmlRootElement(name = "daily_report")
+
 @Entity
 @Table(name = "daily_report")
+@XmlRootElement(name = "daily_report")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class DailyReport {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -35,15 +38,15 @@ public class DailyReport {
 	
     private AutomateInformation automate_information ;
     
-    //@XmlElementWrapper(name = "errors")
-    //@XmlElement(name="error")
+    @XmlElementWrapper(name = "errors")
+    @XmlElement(name="error")
     //@OneToMany(mappedBy = "daily_report_id", cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "daily_report_id", nullable = false, updatable = false)
     private List<ErrorReport> errors;
 
-    //@XmlElementWrapper(name = "articles")
-    //@XmlElement(name="article")
+    @XmlElementWrapper(name = "articles")
+    @XmlElement(name="article")
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "daily_report_id", nullable = false, updatable = false)
 	private List<Article> articles;
