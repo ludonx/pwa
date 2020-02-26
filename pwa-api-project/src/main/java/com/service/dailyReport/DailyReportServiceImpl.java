@@ -63,5 +63,16 @@ public class DailyReportServiceImpl implements  DailyReportService{
 		dailyReportRepo.deleteById(id);
 	}
 
+	@Override
+	public List<DailyReport> addListDailyReport(List<DailyReport> dailyReports) {
+		return dailyReportRepo.saveAll(dailyReports);
+	}
+
+	@Override
+	public void deleteAllDailyReport() {
+		dailyReportRepo.deleteAll();
+		
+	}
+
 	
 }

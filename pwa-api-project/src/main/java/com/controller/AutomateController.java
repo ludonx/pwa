@@ -26,7 +26,9 @@ public class AutomateController {
 	public static final String PathCheckAutomateBySerialNumber = "/Check/serialNumber/{SerialNumber}";
 
 	public static final String PathAddAutomate = "/add";
+	public static final String PathAddListAutomate = "/add/list";
 	public static final String PathDeleteAutomate = "/delete/{SerialNumber}";
+	public static final String PathDeleteAllAutomate = "/delete/all";
 	
 	@Autowired
 	private AutomateService automateService;
@@ -63,10 +65,27 @@ public class AutomateController {
 		return msg; 
 	}
 	
+	@PostMapping(path=AutomateController.PathAddListAutomate)
+	@ResponseStatus(HttpStatus.CREATED)
+	public String addListAutomate(@RequestBody List<Automate> automates){
+		List<Automate> res =  automateService.addListAutomate(automates);
+		
+		String msg; 
+		if(res != null )msg = "Automate added ^.^" ;
+		else msg = "Failed to add Automate !!! :(";
+		return msg; 
+	}
+	
 	@DeleteMapping(path=AutomateController.PathDeleteAutomate)
 	public String deleteAutomateBySerialNumber(@PathVariable Long SerialNumber){
 		automateService.deleteAutomateBySerialNumber(SerialNumber);
 		return "Delete Completed";
+	}
+	
+	@DeleteMapping(path=AutomateController.PathDeleteAllAutomate)
+	public String deleteAllAutomate(){
+		automateService.deleteAllAutomate();
+		return "All Automate Have been Deleted";
 	}
 
 }

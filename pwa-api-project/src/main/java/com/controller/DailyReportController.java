@@ -31,7 +31,9 @@ public class DailyReportController {
 	public static final String PathGetDailyReportById = "/{id}";
 
 	public static final String PathAddDailyReport = "/add";
+	public static final String PathAddAllDailyReport = "/add/list";
 	public static final String PathDeleteDailyReport = "/delete/{id}";
+	public static final String PathDeleteAllDailyReport = "/delete/all";
 	
 	
 	@Autowired
@@ -90,6 +92,38 @@ public class DailyReportController {
 	public String deleteDailyReportSerialNumber(@PathVariable Long id){
 		dailyReportService.deleteDailyReportById(id);
 		return "Deleting completed";
+	}
+    
+    @PostMapping(
+    		path=DailyReportController.PathAddAllDailyReport,
+    		consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
+            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
+    )
+    @ResponseStatus(HttpStatus.CREATED)
+	public String addAllDailyReport(@RequestBody List<DailyReport> dailyReports){
+		String msg = "[--] \n"; 
+		//AutomateController automateController = new AutomateController() ;
+		for (DailyReport dailyReport : dailyReports) {
+			Boolean  automate_exist = automateService.existsAutomateBySerialNumber(dailyReport.getSerial_number());
+			// automateController.CheckAutomateBySerialNumber(dailyReport.getSerial_number());
+	
+			if (automate_exist == true) {
+				DailyReport res = dailyReportService.addDailyReport(dailyReport);
+				if(res != null )msg  += " [ DailyReport added " + dailyReport.getSerial_number() + " ]\n" ;
+				else msg += "Failed to add DailyReport "+ dailyReport.getSerial_number()  + " ]\n" ;
+			}else {
+				msg += " [FAILED]Failed to add : automate with serial number ["+dailyReport.getSerial_number()+"] does not exist !!!\n";
+			}
+		}
+		
+		
+		return msg; 
+	}
+    
+    @DeleteMapping(path=DailyReportController.PathDeleteAllDailyReport)
+	public String deleteAllDailyReportSerialNumber(){
+		dailyReportService.deleteAllDailyReport();
+		return "All report have been Deleted";
 	}
 
 }

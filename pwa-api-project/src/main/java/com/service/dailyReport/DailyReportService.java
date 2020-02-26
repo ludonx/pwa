@@ -10,6 +10,8 @@ public interface DailyReportService {
 	List<DailyReport> findDailyReportBySerialNumber(Long SerialNumber);
 	List<DailyReport> findAllDailyReport();
 	DailyReport addDailyReport(DailyReport dailyReport);
+	List<DailyReport> addListDailyReport(List<DailyReport> dailyReports);
 	
 	void deleteDailyReportById(Long id);
+	void deleteAllDailyReport();
 }

@@ -25,12 +25,16 @@ public class AutomateServiceImpl implements AutomateService{
 	public List<Automate> findAllAutomate() {
 		return automateRepo.findAll();
 	}
-
+	
 	@Override
 	public Automate addAutomate(Automate automate) {
 		return automateRepo.save(automate);
 	}
-
+	
+	@Override
+	public List<Automate> addListAutomate(List<Automate> automates) {
+		return automateRepo.saveAll(automates);
+	}
 	@Override
 	public boolean existsAutomateBySerialNumber(Long SerialNumber) {
 		return automateRepo.existsById(SerialNumber);
@@ -41,6 +45,14 @@ public class AutomateServiceImpl implements AutomateService{
 		automateRepo.deleteById(SerialNumber);
 		
 	}
+
+	@Override
+	public void deleteAllAutomate() {
+		automateRepo.deleteAll();
+		
+	}
+
+	
 	
 	
 

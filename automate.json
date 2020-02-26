@@ -1,15 +1,62 @@
-{
-  "note": "Café",
-  "address_installation":{
-		"street_number": 20,
-		"street_description": "Rue victor hugo",
-		"city":"Paris",
-    "state": "France"
-	},
+[
+  {
+    "type": "Café",
+    "address_installation":{
+  		"street_number": 20,
+  		"street_description": "Rue victor hugo",
+  		"city":"Paris",
+      "state": "France"
+  	},
 
-  "emplacement": "prés de la sortie de metro 4",
-  "coordinated":{ "longitude": 20,"latitude": 40},
+    "emplacement": "prés de la sortie de metro 4",
+    "coordinated":{ "longitude": 20,"latitude": 40},
 
-	"intervention_date":"2019-11-23T23:00:00.000+0000",
-	"note": "Bonjour Je suis l'automate xx et je fais du Café"
-}
+  	"intervention_date":"2019-11-23T23:00:00.000+0000",
+  	"note": "Bonjour Je suis l'automate xx et je fais du Café"
+  },
+  {
+    "type": "the",
+    "address_installation":{
+  		"street_number": 20,
+  		"street_description": "Rue victor hugo",
+  		"city":"Paris",
+      "state": "France"
+  	},
+
+    "emplacement": "prés de la sortie de metro 4",
+    "coordinated":{ "longitude": 20,"latitude": 40},
+
+  	"intervention_date":"2019-11-23T23:00:00.000+0000",
+  	"note": "Bonjour Je suis l'automate xx et je fais du Café"
+  },
+  {
+    "type": "pain",
+    "address_installation":{
+      "street_number": 20,
+      "street_description": "Rue victor hugo",
+      "city":"Paris",
+      "state": "France"
+    },
+
+    "emplacement": "prés de la sortie de metro 4",
+    "coordinated":{ "longitude": 20,"latitude": 40},
+
+    "intervention_date":"2019-11-23T23:00:00.000+0000",
+    "note": "Bonjour Je suis l'automate xx et je fais du Café"
+  },
+  {
+    "type": "jus d'orange",
+    "address_installation":{
+      "street_number": 20,
+      "street_description": "Rue victor hugo",
+      "city":"Paris",
+      "state": "France"
+    },
+
+    "emplacement": "prés de la sortie de metro 4",
+    "coordinated":{ "longitude": 20,"latitude": 40},
+
+    "intervention_date":"2019-11-23T23:00:00.000+0000",
+    "note": "Bonjour Je suis l'automate xx et je fais du Café"
+  }
+]

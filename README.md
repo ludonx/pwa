@@ -38,8 +38,10 @@ web project
     | TABLE | POST                  | Description               | 
     | ----  | ----                  | ----                      |
     |dailyReport	| /add                 | add dailyReport `json` and `xml`  |
+     |dailyReport	| /add/list                | add list of dailyReport `json` and `xml`  |
     |	            | ----                  | ----                      |
     |automate	| /add                 | add automate `json`  |
+    |automate	| /add/list                 | add list of automate `json`  |
     
      
     * ***DELETE***
@@ -48,6 +50,8 @@ web project
     | ----  | ----                  | ----                      |
     |dailyReport	| /delete/{id}         | delete dailyReport by id  |
     |automate   	| /delete/{serialNumber} | delete automate by serialNumber  |
+    |dailyReport	| /delete/all         | delete all dailyReports  |
+    |automate   	| /delete/all | delete all automates |
     |	            | ----                  | ----                      |
 
 ## EXECUTE the Web Service localy with the JAR file
